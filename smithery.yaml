@@ -1,0 +1,33 @@
+# Smithery configuration for Remover Fundo
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_removebg
+
+name: removebg-mcp
+displayName: "Remover Fundo"
+description: >
+  Remove o fundo de uma imagem por URL, recorta a pessoa ou objeto em primeiro plano com IA e devolve um PNG com fundo transparente. Opcionalmente troca o fundo por uma cor sólida ou redimensiona. Leva poucos segundos, sem credenciais, hospedado pela plataforma.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/removebg-mcp
+repository: https://github.com/mcp-dir/removebg-mcp
+
+tags:
+  - removebg
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_removebg
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_removebg/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
