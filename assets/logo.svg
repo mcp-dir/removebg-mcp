@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Remover Fundo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <pattern id="checker" width="68" height="68" patternUnits="userSpaceOnUse">
+      <rect width="68" height="68" fill="#ffffff"/>
+      <rect width="34" height="34" fill="#e2e8f0"/>
+      <rect x="34" y="34" width="34" height="34" fill="#e2e8f0"/>
+    </pattern>
+    <clipPath id="round">
+      <rect x="120" y="120" width="272" height="272" rx="40"/>
+    </clipPath>
+  </defs>
+
+  <!-- fundo do ícone -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- xadrez de transparência (o símbolo universal de "fundo removido") -->
+  <g clip-path="url(#round)">
+    <rect x="120" y="120" width="272" height="272" fill="url(#checker)"/>
+  </g>
+  <rect x="120" y="120" width="272" height="272" rx="40" fill="none" stroke="#ffffff" stroke-width="10" opacity="0.9"/>
+
+  <!-- silhueta do sujeito PRESERVADO sobre o fundo transparente -->
+  <g clip-path="url(#round)">
+    <circle cx="256" cy="238" r="52" fill="#4f46e5"/>
+    <path d="M168 392c0-52 40-92 88-92s88 40 88 92z" fill="#4f46e5"/>
+  </g>
+</svg>
